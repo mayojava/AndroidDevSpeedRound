@@ -10,4 +10,13 @@
       the License.
       -->
     <string name="app_name">AndroidDevChallenge</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="log_in">LOG IN</string>
+    <string name="dont_have_account">Dontt have an account? Sign up</string>
+    <string name="search">Search</string>
+    <string name="align_your_body">ALIGN YOUR BODY</string>
+    <string name="align_your_mind">ALIGN YOUR MIND</string>
+    <string name="favorite_collection">FAVORITE COLLECTIONS</string>
+    <string name="home">HOME</string>
+    <string name="profile">PROFILE</string>
 </resources>
