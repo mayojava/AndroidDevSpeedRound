@@ -16,6 +16,7 @@
 package com.example.androiddevchallenge
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -39,13 +40,11 @@ import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavHostController
-import androidx.navigation.compose.navigate
 
 @Composable
-fun Login(nav: NavHostController) {
-    Surface(modifier = Modifier.fillMaxSize()) {
-        Box(modifier = Modifier.fillMaxSize()) {
+fun Login(onLoginClicked: () -> Unit) {
+    Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colors.background) {
+        Box(modifier = Modifier.fillMaxSize().background(color = MaterialTheme.colors.background)) {
             Image(
                 painter = painterResource(id = R.drawable.ic_login),
                 contentDescription = "Login Icon",
@@ -98,7 +97,7 @@ fun Login(nav: NavHostController) {
                 )
                 Spacer(modifier = Modifier.height(8.dp))
                 Button(
-                    onClick = { nav.navigate(Destinations.Home) },
+                    onClick = { onLoginClicked() },
                     shape = MaterialTheme.shapes.medium,
                     modifier = Modifier
                         .padding(16.dp)

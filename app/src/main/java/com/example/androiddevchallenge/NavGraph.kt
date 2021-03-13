@@ -18,6 +18,7 @@ package com.example.androiddevchallenge
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.compose.navigate
 import androidx.navigation.compose.rememberNavController
 
 object Destinations {
@@ -26,17 +27,22 @@ object Destinations {
     const val Home = "home"
 }
 
-@Composable fun NavGraph(start: String = Destinations.Welcome) {
+@Composable
+fun NavGraph(start: String = Destinations.Welcome) {
     val navController = rememberNavController()
     NavHost(
         navController = navController,
         startDestination = start
     ) {
         composable(Destinations.Welcome) {
-            Welcome(navController)
+            Welcome {
+                navController.navigate(Destinations.Login)
+            }
         }
         composable(Destinations.Login) {
-            Login(navController)
+            Login {
+                navController.navigate(Destinations.Home)
+            }
         }
         composable(Destinations.Home) {
             Home()
